@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { SplashScreen } from "./components/SplashScreen";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    (async () => {
+        const rawResponse = await fetch(
+            "https://thebetter.bsgroup.eu/Authorization/SignIn",
+            {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    Device: {
+                        PlatformCode: "WEB",
+                        Name: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                    },
+                }),
+            }
+        );
+        const content = await rawResponse.json();
+
+        console.log(content);
+    })();
+
+    return (
+        <div className="App">
+            <SplashScreen />
+        </div>
+    );
 }
 
 export default App;

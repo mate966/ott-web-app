@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.welcome-heading {
+  font-size: 4rem;
+  font-family: "Bebas Neue", cursive;
+}
+
+.welcome-subheading {
+  font-size: 2.5rem;
+  font-family: "Dancing Script", cursive;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("/src/assets/background-m.png"), #6d05f5;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: #fff;
+}
+
+.wrapper {
+  padding: 0 20px;
+}
+
+.splash-screen {
+  padding-top: 110px;
+  min-height: 100vh;
+  text-align: center;
+  opacity: 0;
+  -webkit-animation: splashAnimation 2s ease-in both;
+          animation: splashAnimation 2s ease-in both;
+}
+
+@-webkit-keyframes splashAnimation {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes splashAnimation {
+  100% {
+    opacity: 1;
+  }
+}
+
+.form__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.home {
+  min-height: 100vh;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo {
+  width: 150px;
+}
+
+.button {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  border: 2px solid #f800ac;
+  border-radius: 20px;
+  line-height: 40px;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  z-index: 2;
+}
+
+.button--sign-in::after {
+  content: "Hello!";
+  position: absolute;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.button--sign-in:hover::after {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+/*# sourceMappingURL=main.css.map */

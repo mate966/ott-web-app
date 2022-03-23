@@ -1,0 +1,8 @@
+body {
+    font-family: $main-f;
+    // background-color: $bg-c;
+    background: url("/src/assets/background-m.png"), $bg-c;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    color: #fff;
+}

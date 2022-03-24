@@ -1,12 +1,35 @@
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .form__container {
     display: flex;
+    flex-direction: column;
+    margin: auto;
     width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
 }
 
 .form {
     display: flex;
     flex-direction: column;
+}
+
+.input {
+    @include input;
+    border: 1px solid $accent-c;
+}
+
+.submit {
+    @include input;
+    border: 1px solid $accent-c;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $accent-c;
+    }
 }

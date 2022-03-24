@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { Home } from "../layout/Home";
+import { SignIn } from "../layout/SignIn";
 
 import React from "react";
 
 export const SplashScreen = () => {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         setIsLoading(true);
@@ -23,7 +23,7 @@ export const SplashScreen = () => {
                     </div>
                 </div>
             ) : (
-                <Home />
+                <SignIn />
             )}
         </>
     );

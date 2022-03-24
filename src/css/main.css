@@ -37,34 +37,55 @@ body {
   min-height: 100vh;
   text-align: center;
   opacity: 0;
-  -webkit-animation: splashAnimation 2s ease-in both;
-          animation: splashAnimation 2s ease-in both;
+  -webkit-animation: splashAnimation 4s ease-in both;
+          animation: splashAnimation 4s ease-in both;
 }
 
 @-webkit-keyframes splashAnimation {
-  100% {
+  35% {
     opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
 @keyframes splashAnimation {
-  100% {
+  35% {
     opacity: 1;
   }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.sign-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
 }
 
 .form__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
   width: 100%;
-  height: 100vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .form {
@@ -75,6 +96,28 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.input {
+  margin: 10px auto;
+  padding: 15px 5px;
+  width: 80%;
+  border: 1px solid #f800ac;
+}
+
+.submit {
+  margin: 10px auto;
+  padding: 15px 5px;
+  width: 80%;
+  border: 1px solid #f800ac;
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #f800ac;
 }
 
 .home {
@@ -95,37 +138,5 @@ nav {
 
 .logo {
   width: 150px;
-}
-
-.button {
-  position: relative;
-  width: 100px;
-  height: 40px;
-  border: 2px solid #f800ac;
-  border-radius: 20px;
-  line-height: 40px;
-  text-align: center;
-  overflow: hidden;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  z-index: 2;
-}
-
-.button--sign-in::after {
-  content: "Hello!";
-  position: absolute;
-  left: 0;
-  top: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: red;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  z-index: 1;
-}
-
-.button--sign-in:hover::after {
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
 }
 /*# sourceMappingURL=main.css.map */

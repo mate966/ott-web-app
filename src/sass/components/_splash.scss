@@ -3,11 +3,17 @@
     min-height: 100vh;
     text-align: center;
     opacity: 0;
-    animation: splashAnimation 2s ease-in both;
+    animation: splashAnimation 4s ease-in both;
 }
 
 @keyframes splashAnimation {
-    100% {
+    35% {
         opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

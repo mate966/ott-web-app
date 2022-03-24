@@ -13,7 +13,7 @@ export const getMoviesList = createAsyncThunk(
                         Authorization: `Bearer ${userToken}`,
                     },
                     body: JSON.stringify({
-                        MediaListId: 2,
+                        MediaListId: 3,
                         IncludeCategories: false,
                         IncludeImages: true,
                         IncludeMedia: false,

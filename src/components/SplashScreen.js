@@ -1,17 +1,15 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { SignIn } from "../layout/SignIn";
-
-import React from "react";
 
 export const SplashScreen = () => {
     const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 4000);
-    }, []);
+    // useEffect(() => {
+    //     setIsLoading(true);
+    //     setTimeout(() => {
+    //         setIsLoading(false);
+    //     }, 4000);
+    // }, []);
 
     return (
         <>

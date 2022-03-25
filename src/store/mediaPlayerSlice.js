@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getMediaPlayer = createAsyncThunk(
     "mediaPlayer/getMediaPlayer",
-    async userToken => {
+    async user => {
         try {
             const rawResponse = await fetch(
                 "https://thebetter.bsgroup.eu/Media/GetMediaPlayInfo",
@@ -10,9 +10,12 @@ export const getMediaPlayer = createAsyncThunk(
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${userToken}`,
+                        Authorization: `Bearer ${user.userToken}`,
                     },
-                    body: JSON.stringify({ MediaId: 1, StreamType: "TRIAL" }),
+                    body: JSON.stringify({
+                        MediaId: user.userId,
+                        StreamType: "TRIAL",
+                    }),
                 }
             );
             const content = await rawResponse.json();
@@ -37,7 +40,7 @@ const mediaPlayerSlice = createSlice({
             state.list = payload;
             state.status = "succes";
         },
-        [getMediaPlayer.rejected]: (state, { payload }) => {
+        [getMediaPlayer.rejected]: (state, action) => {
             state.status = "failed";
         },
     },
@@ -46,3 +49,7 @@ const mediaPlayerSlice = createSlice({
 export const mediaPlayerAcctions = mediaPlayerSlice.actions;
 
 export default mediaPlayerSlice.reducer;
+
+// export const selectStatus = state => {
+//     return state.mediaPlayer.status;
+// };

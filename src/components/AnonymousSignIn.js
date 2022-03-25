@@ -14,7 +14,7 @@ export const AnonymousSignIn = () => {
         e.preventDefault();
         dispatch(fetchAnonymousUser());
         dispatch(authAcctions.login());
-        // navigate("/home");
+        navigate("/home");
     };
     return (
         <button className="submit" onClick={handleAnonymouslySignIn}>

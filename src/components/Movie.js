@@ -1,70 +1,77 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getMoviesList } from "../store/moviesListSlice";
-import { getMediaPlayer } from "../store/mediaPlayerSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import ReactPlayer from "react-player/lazy";
-
+import { useNavigate } from "react-router-dom";
 import { Loader } from "./Loader";
+import movieBackground from "../assets/movie-background-m.png";
 
 export const Movie = () => {
+    const [hovered, setHovered] = useState(false);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const moviesList = useSelector(state => state.moviesList.list.Entities);
     const user = useSelector(
         state => state.anonymousUser.list.AuthorizationToken
     );
 
-    const mediaPlayer = useSelector(
-        state => state.anonymousUser.list.AuthorizationToken
-    );
-
-    const moviesList = useSelector(state => state.moviesList.list.Entities);
-
-    const medias = useSelector(state => state.mediaPlayer.list);
-    console.log(medias.ContentUrl);
-
-    const handleMediaPlayer = () => {
-        console.log("jest");
+    const toggleHover = () => setHovered(!hovered);
+    const handleMediaPlayer = (id, userToken) => {
+        return navigate("/player", { state: { id: id, userToken: userToken } });
     };
 
     useEffect(() => {
-        return user === undefined ? null : dispatch(getMoviesList(user.Token));
+        return user && dispatch(getMoviesList(user.Token));
     }, [user]);
-
-    useEffect(() => {
-        return mediaPlayer === undefined
-            ? null
-            : dispatch(getMediaPlayer(user.Token));
-    }, [mediaPlayer]);
 
     return (
         <>
-            {moviesList === undefined ? (
+            {!moviesList ? (
                 <Loader />
             ) : (
-                <Splide options={{ arrows: false, pagination: false }}>
-                    {moviesList.map(movie => (
+                <Splide
+                    options={{
+                        arrows: false,
+                        pagination: false,
+                        gap: 10,
+                        height: 200,
+                        cover: true,
+                    }}
+                >
+                    {moviesList.map((movie, id) => (
                         <SplideSlide
                             key={movie.Guid}
-                            onClick={handleMediaPlayer}
+                            onClick={() =>
+                                handleMediaPlayer(movie.Id, user.Token)
+                            }
+                            onMouseEnter={toggleHover}
+                            onMouseLeave={toggleHover}
                         >
-                            {movie.Images.map(image =>
-                                image.ImageTypeCode === "FRAME" ? (
-                                    <img
-                                        src={image.Url}
-                                        className="movie-image"
-                                        key={movie.Guid}
-                                    ></img>
-                                ) : null
+                            <p className={!hovered ? "title" : "title-active"}>
+                                {movie.Title}
+                            </p>
+                            {movie.Images.length === 0 ? (
+                                <img
+                                    src={movieBackground}
+                                    className="movie-image"
+                                    key={movie.Guid}
+                                ></img>
+                            ) : (
+                                movie.Images.map(
+                                    image =>
+                                        image.ImageTypeCode === "FRAME" && (
+                                            <img
+                                                src={image.Url}
+                                                className="movie-image"
+                                                key={movie.Guid}
+                                            ></img>
+                                        )
+                                )
                             )}
                         </SplideSlide>
                     ))}
                 </Splide>
             )}
-            <ReactPlayer
-                url={medias.ContentUrl}
-                // playing={true}
-                controls={true}
-            />
         </>
     );
 };

@@ -6,8 +6,10 @@
 @import "./settings/wrapper";
 
 @import "./components/splash";
+@import "./components/loader";
 @import "./components/movie";
 @import "./components/player";
+@import "./components/page-not-found";
 
 @import "./layout/sign-in";
 @import "./layout/home";

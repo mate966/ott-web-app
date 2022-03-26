@@ -1,21 +1,24 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchAnonymousUser = createAsyncThunk(
-    "anonymousUser/fetchAnonymousUser",
-    async () => {
+export const getMoviesList = createAsyncThunk(
+    "moviesList/getMoviesList",
+    async userToken => {
         try {
             const rawResponse = await fetch(
-                "https://thebetter.bsgroup.eu/Authorization/SignIn",
+                "https://thebetter.bsgroup.eu/Media/GetMediaList",
                 {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
+                        Authorization: `Bearer ${userToken}`,
                     },
                     body: JSON.stringify({
-                        Device: {
-                            PlatformCode: "WEB",
-                            Name: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                        },
+                        MediaListId: 3,
+                        IncludeCategories: false,
+                        IncludeImages: true,
+                        IncludeMedia: false,
+                        PageNumber: 1,
+                        PageSize: 15,
                     }),
                 }
             );
@@ -27,26 +30,26 @@ export const fetchAnonymousUser = createAsyncThunk(
     }
 );
 
-const anonymousUserSlice = createSlice({
-    name: "anonymousUser",
+const moviesListSlice = createSlice({
+    name: "moviesList",
     initialState: {
         list: [],
         status: null,
     },
     extraReducers: {
-        [fetchAnonymousUser.pending]: (state, action) => {
+        [getMoviesList.pending]: (state, action) => {
             state.status = "loading";
         },
-        [fetchAnonymousUser.fulfilled]: (state, { payload }) => {
+        [getMoviesList.fulfilled]: (state, { payload }) => {
             state.list = payload;
             state.status = "succes";
         },
-        [fetchAnonymousUser.rejected]: (state, action) => {
+        [getMoviesList.rejected]: (state, action) => {
             state.status = "failed";
         },
     },
 });
 
-export const anonymousUserAcctions = anonymousUserSlice.actions;
+export const moviesListAcctions = moviesListSlice.actions;
 
-export default anonymousUserSlice.reducer;
+export default moviesListSlice.reducer;

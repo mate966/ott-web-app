@@ -3,3 +3,23 @@
     height: 100vh;
     overflow: hidden;
 }
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow-icon {
+    width: 40px;
+    height: 40px;
+}

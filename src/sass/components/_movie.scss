@@ -1,12 +1,12 @@
 .splide__list {
-    margin-top: 100px;
     display: flex;
     list-style-type: none;
 }
 
 .splide__slide {
     flex-shrink: 0;
-    max-width: 400px;
+    max-width: 320px;
+    max-height: 180px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.4s;
@@ -31,4 +31,8 @@
     font-size: 1.4rem;
     opacity: 1;
     transition: 0.7s;
+}
+
+.movies-list {
+    margin-top: 50px;
 }

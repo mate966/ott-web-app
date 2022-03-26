@@ -3,5 +3,10 @@ import React from "react";
 import { Movie } from "./Movie";
 
 export const MoviesList = () => {
-    return <Movie />;
+    return (
+        <>
+            <Movie />
+            <Movie />
+        </>
+    );
 };

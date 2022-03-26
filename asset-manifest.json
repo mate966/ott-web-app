@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/ott-web-app/static/css/main.d4b4285e.css",
+    "main.js": "/ott-web-app/static/js/main.5ebcefc4.js",
+    "reactPlayerYouTube.js": "/ott-web-app/static/js/reactPlayerYouTube.e2444d46.chunk.js",
+    "reactPlayerSoundCloud.js": "/ott-web-app/static/js/reactPlayerSoundCloud.efe8063a.chunk.js",
+    "reactPlayerVimeo.js": "/ott-web-app/static/js/reactPlayerVimeo.1efb2dca.chunk.js",
+    "reactPlayerFacebook.js": "/ott-web-app/static/js/reactPlayerFacebook.b8297468.chunk.js",
+    "reactPlayerStreamable.js": "/ott-web-app/static/js/reactPlayerStreamable.4dfba8e1.chunk.js",
+    "reactPlayerWistia.js": "/ott-web-app/static/js/reactPlayerWistia.3ee20fc5.chunk.js",
+    "reactPlayerTwitch.js": "/ott-web-app/static/js/reactPlayerTwitch.23b2105b.chunk.js",
+    "reactPlayerDailyMotion.js": "/ott-web-app/static/js/reactPlayerDailyMotion.f9567d59.chunk.js",
+    "reactPlayerMixcloud.js": "/ott-web-app/static/js/reactPlayerMixcloud.5609a4eb.chunk.js",
+    "reactPlayerVidyard.js": "/ott-web-app/static/js/reactPlayerVidyard.b0cd3e60.chunk.js",
+    "reactPlayerKaltura.js": "/ott-web-app/static/js/reactPlayerKaltura.5ab3cb2a.chunk.js",
+    "reactPlayerFilePlayer.js": "/ott-web-app/static/js/reactPlayerFilePlayer.85028da2.chunk.js",
+    "reactPlayerPreview.js": "/ott-web-app/static/js/reactPlayerPreview.ac9471ca.chunk.js",
+    "static/media/movie-background-m.png": "/ott-web-app/static/media/movie-background-m.d38ef409010521d77ea8.png",
+    "static/media/background-m.png": "/ott-web-app/static/media/background-m.cd10d1259af34b3be12d.png",
+    "index.html": "/ott-web-app/index.html",
+    "main.d4b4285e.css.map": "/ott-web-app/static/css/main.d4b4285e.css.map",
+    "main.5ebcefc4.js.map": "/ott-web-app/static/js/main.5ebcefc4.js.map",
+    "reactPlayerYouTube.e2444d46.chunk.js.map": "/ott-web-app/static/js/reactPlayerYouTube.e2444d46.chunk.js.map",
+    "reactPlayerSoundCloud.efe8063a.chunk.js.map": "/ott-web-app/static/js/reactPlayerSoundCloud.efe8063a.chunk.js.map",
+    "reactPlayerVimeo.1efb2dca.chunk.js.map": "/ott-web-app/static/js/reactPlayerVimeo.1efb2dca.chunk.js.map",
+    "reactPlayerFacebook.b8297468.chunk.js.map": "/ott-web-app/static/js/reactPlayerFacebook.b8297468.chunk.js.map",
+    "reactPlayerStreamable.4dfba8e1.chunk.js.map": "/ott-web-app/static/js/reactPlayerStreamable.4dfba8e1.chunk.js.map",
+    "reactPlayerWistia.3ee20fc5.chunk.js.map": "/ott-web-app/static/js/reactPlayerWistia.3ee20fc5.chunk.js.map",
+    "reactPlayerTwitch.23b2105b.chunk.js.map": "/ott-web-app/static/js/reactPlayerTwitch.23b2105b.chunk.js.map",
+    "reactPlayerDailyMotion.f9567d59.chunk.js.map": "/ott-web-app/static/js/reactPlayerDailyMotion.f9567d59.chunk.js.map",
+    "reactPlayerMixcloud.5609a4eb.chunk.js.map": "/ott-web-app/static/js/reactPlayerMixcloud.5609a4eb.chunk.js.map",
+    "reactPlayerVidyard.b0cd3e60.chunk.js.map": "/ott-web-app/static/js/reactPlayerVidyard.b0cd3e60.chunk.js.map",
+    "reactPlayerKaltura.5ab3cb2a.chunk.js.map": "/ott-web-app/static/js/reactPlayerKaltura.5ab3cb2a.chunk.js.map",
+    "reactPlayerFilePlayer.85028da2.chunk.js.map": "/ott-web-app/static/js/reactPlayerFilePlayer.85028da2.chunk.js.map",
+    "reactPlayerPreview.ac9471ca.chunk.js.map": "/ott-web-app/static/js/reactPlayerPreview.ac9471ca.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4b4285e.css",
+    "static/js/main.5ebcefc4.js"
+  ]
+}

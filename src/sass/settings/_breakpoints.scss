@@ -1,0 +1,36 @@
+$breakpoints: (
+    xs: (
+        min-width: 512px,
+    ),
+    sm: (
+        min-width: 768px,
+    ),
+    md: (
+        min-width: 992px,
+    ),
+    lg: (
+        min-width: 1200px,
+    ),
+    xl: (
+        min-width: 1440px,
+    ),
+    tv: (
+        min-width: 1920px,
+    ),
+);
+
+@mixin breakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints,$breakpoint))} {
+            @content;
+        }
+    }
+}
+
+@mixin breakpointLandscape($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints,$breakpoint))} and (orientation: landscape) {
+            @content;
+        }
+    }
+} ;

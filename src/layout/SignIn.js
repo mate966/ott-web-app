@@ -5,6 +5,7 @@ import { fetchUser } from "../store/reducers/userSlice";
 import { authAcctions } from "../store/reducers/authSlice";
 
 import { Nav } from "./Nav";
+import { Footer } from "./Footer";
 
 export const SignIn = () => {
     const initialValues = { email: "", password: "" };
@@ -83,6 +84,7 @@ export const SignIn = () => {
                     Sign in as Guest
                 </button>
             </div>
+            <Footer />
         </div>
     );
 };

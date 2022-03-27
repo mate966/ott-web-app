@@ -9,6 +9,7 @@
     flex-direction: column;
     margin: auto;
     width: 100%;
+    max-width: 400px;
 }
 
 .form {
@@ -18,12 +19,15 @@
 
 .input {
     @include input;
-    border: 1px solid $accent-c;
+
+    &:focus {
+        outline: none;
+        border: 2px solid black;
+    }
 }
 
 .submit {
     @include input;
-    border: 1px solid $accent-c;
     background-color: transparent;
     font-size: 1.2rem;
     color: white;

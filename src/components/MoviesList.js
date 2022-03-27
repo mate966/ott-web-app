@@ -6,7 +6,6 @@ export const MoviesList = () => {
     return (
         <>
             <Movie />
-            <Movie />
         </>
     );
 };

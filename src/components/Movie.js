@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useNavigate } from "react-router-dom";
 import { Loader } from "./Loader";
-import movieBackground from "../assets/movie-background-m.png";
+import movieBackground from "../assets/movie-background.png";
 
 export const Movie = () => {
     const [hovered, setHovered] = useState(false);
@@ -14,6 +14,7 @@ export const Movie = () => {
     const user = useSelector(state => state.user.list.AuthorizationToken);
 
     const toggleHover = () => setHovered(!hovered);
+
     const handleMediaPlayer = (id, userToken) => {
         return navigate("/player", { state: { id: id, userToken: userToken } });
     };
@@ -63,7 +64,8 @@ export const Movie = () => {
                                 ) : (
                                     movie.Images.map(
                                         image =>
-                                            image.ImageTypeCode === "FRAME" && (
+                                            (image.ImageTypeCode === "FRAME" ||
+                                                image.Id === 1103) && (
                                                 <img
                                                     src={image.Url}
                                                     className="movie-image"

@@ -1,7 +1,13 @@
 body {
     font-family: $main-f;
-    background: url("/src/assets/background-m.png"), $bg-c;
+    background: url("../assets/mobile/background-m.png"), $bg-c;
     background-repeat: no-repeat;
     background-position: bottom;
     color: #fff;
+
+    @include breakpoint("xs") {
+        background: url("../assets/background.png"), $bg-c;
+        background-size: cover;
+        background-position: bottom;
+    }
 }

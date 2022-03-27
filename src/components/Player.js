@@ -15,7 +15,7 @@ export const Player = () => {
     const navigate = useNavigate();
     const userToken = location.state.userToken;
     const userId = location.state.id;
-    const mediaPlayer = useSelector(state => state.mediaPlayer.list);
+    const mediaPlayer = useSelector(state => state.mediaPlayer);
 
     const handleArrowShow = () => {
         setIsMove(true);
@@ -46,15 +46,16 @@ export const Player = () => {
                         />
                     </div>
                 ) : null}
-                {mediaPlayer.ContentUrl ? (
+                {mediaPlayer.list.ContentUrl &&
+                mediaPlayer.status === "succes" ? (
                     <ReactPlayer
-                        url={mediaPlayer.ContentUrl}
+                        url={mediaPlayer.list.ContentUrl}
                         controls={true}
                         width="100%"
                         height="100%"
                     />
                 ) : (
-                    <Loader />
+                    <p className="loader">Sorry, video not found.</p>
                 )}
             </div>
         </div>

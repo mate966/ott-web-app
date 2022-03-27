@@ -272,6 +272,9 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
+  opacity: 0;
+  -webkit-animation: show 1s both;
+          animation: show 1s both;
 }
 
 .form__container {
@@ -326,6 +329,18 @@ body {
   background-color: #f800ac;
 }
 
+@-webkit-keyframes show {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+  }
+}
+
 .home__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -347,11 +362,6 @@ body {
 
 .user-message {
   margin-top: 200px;
-  text-align: center;
-}
-
-footer {
-  padding: 20px 0;
   text-align: center;
 }
 
@@ -396,5 +406,10 @@ nav {
 
 .profile .dropdown:hover {
   background-color: #ddd;
+}
+
+footer {
+  padding: 20px 0;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

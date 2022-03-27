@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    opacity: 0;
+    animation: show 1s both;
 }
 
 .form__container {
@@ -35,5 +37,11 @@
 
     &:hover {
         background-color: $accent-c;
+    }
+}
+
+@keyframes show {
+    100% {
+        opacity: 1;
     }
 }

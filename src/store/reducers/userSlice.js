@@ -32,7 +32,6 @@ const userSlice = createSlice({
     initialState: {
         list: [],
         status: null,
-        error: false,
     },
     extraReducers: {
         [fetchUser.pending]: (state, action) => {
